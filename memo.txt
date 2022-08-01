@@ -1,0 +1,11 @@
+https://qiita.com/awakia/items/6233eeac21fb895fa58d
+
+
+
+git remote add game https://github.com/lemoned42731/game.git
+git fetch game
+git checkout -b game game/master
+git filter-branch -f --tree-filter "mkdir game && git mv -k {,.[\!.],..[\!.]}* game/"
+git checkout master
+git merge game
+
